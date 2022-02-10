@@ -126,13 +126,14 @@
     </div>
     <div class="wf-section">
       <div class="w-container">
-        <div class="w-form">
+        <div class="w-form" >
           <form
             id="wf-form-Messaging-Form"
             name="wf-form-Messaging-Form"
             data-name="Messaging Form"
             method="get"
             aria-label="Messaging Form"
+            onsubmit="sendEmail(); reset(); return false;"
           >
             <label for="name">Name</label
             ><input
@@ -248,17 +249,27 @@
       src="main.js"
       type="text/javascript"
     ></script>
+    <script
+      src="https://smtpjs.com/v3/smtp.js"      
+    ></script>
+    <script>
+      function sendEmail(){
+        Email.send({
+            Host : "smtp.yourisp.com",
+            Username : "username",
+            Password : "password",
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );        
+      }
+    </script>
     <!--[if lte IE 9
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
     ><![endif]-->
-    <a class="w-webflow-badge" href="https://webflow.com?utm_campaign=brandjs"
-      ><img
-        src="https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon.f67cd735e3.svg"
-        alt=""
-        style="margin-right: 8px; width: 16px" /><img
-        src="https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg"
-        alt="Made in Webflow"
-    /></a>
-    <div id="forest-ext-shadow-host"></div>
+      <div id="forest-ext-shadow-host"></div>
   </body>
 </html>
