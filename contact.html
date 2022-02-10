@@ -254,18 +254,18 @@
     ></script>
     <script>
       function sendEmail(){
-        Email.send({
-            Host : "smtp.gmail.com",
-            Username : "mirzaunofficial@gmail.com",
-            Password : "hellomirza",
-            To : 'femilmirza000@gmail.com',
-            From : document.getElementById("email").value,
-            Subject : "New Contact Form Enquiry",
-            Body : "You have a new submission!"
-        }).then(
-          message => alert(message)
-        );        
-      }
+          Email.send({
+          Host : "smtp.gmail.com",
+          Username : "mirzaunofficial@gmail.com",
+          Password : "hellomirza",
+          To : 'femilmirza000@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : "New Contact Form Enquiry",
+          Body : "You have a new submission!"
+      }).then(
+        message => alert(message)
+       );        
+       }
     </script>
     <!--[if lte IE 9
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
