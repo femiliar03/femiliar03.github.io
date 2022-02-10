@@ -19,11 +19,7 @@
     />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
-    <link
-      href="style.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script
       src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"
@@ -126,7 +122,7 @@
     </div>
     <div class="wf-section">
       <div class="w-container">
-        <div class="w-form" >
+        <div class="w-form">
           <form
             id="wf-form-Messaging-Form"
             name="wf-form-Messaging-Form"
@@ -145,7 +141,7 @@
               data-name="Name"
               placeholder="Enter your name"
               id="name"
-              required=""
+              required=false
             /><label for="email">Email Address</label
             ><input
               type="email"
@@ -245,23 +241,24 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="main.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="https://smtpjs.com/v3/smtp.js"      
-    ></script>
+    <script src="main.js" type="text/javascript"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       function sendEmail() {
+          var name = $('#name').val();
+          var email = $('#email').val();
+          var message = $('#Field').val();
+
+          var Body='Name: '+name+'<br>Email: '+email+'<br>Message: '+message;
+      }
         Email.send({
           Host: "smtp.gmail.com",
           Username: "femiliar.me@gmail.com",
           Password: "airupjomubltofig",
           To: "femilmirza000@gmail.com",
           From: "femiliar.me@gmail.com",
-          Subject: "New Contact Form Enquiry",
-          Body: "You have a new submission!",
+          Subject: "You have a new submission!",
+          Body: body,
         }).then(
           message =>{
             if(message=='OK'){
@@ -277,6 +274,6 @@
     <!--[if lte IE 9
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
     ><![endif]-->
-      <div id="forest-ext-shadow-host"></div>
+    <div id="forest-ext-shadow-host"></div>
   </body>
 </html>
