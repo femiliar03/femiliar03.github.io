@@ -17092,6 +17092,7 @@ var Matrix = (function () {
                 (seed === null) ? autoseed() : seed, 3), key);
 
         // Use the seed to initialize an ARC4 generator.
+
         var arc4 = new ARC4(key);
 
         // This function returns a random double in [0, 1) that contains
@@ -40416,7 +40417,6 @@ Webflow.define('forms', module.exports = function ($, _) {
   }
   /* WEBFLOW_HOSTED_BLOCK:START */
   // Submit form to Webflow
-
 
   function hostedSubmitWebflow(data) {
     reset(data);
