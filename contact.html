@@ -262,8 +262,16 @@
           From: "femiliar.me@gmail.com",
           Subject: "New Contact Form Enquiry",
           Body: "You have a new submission!",
-        }).then((message) => alert(message));
-      }
+        }).then(
+          message =>{
+            if(message=='OK'){
+                alert("Thanks for approaching! Femil is looking to connect with you soooooooon!🎉")
+                }
+                else{
+                  console.error(message);
+                  alert('Whoops! An error occured..')
+                }
+          }
     </script>
     <!--[if lte IE 9
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
